@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Gautam Insurance</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="brand-link">
+                    <img class="brand-logo" alt="Company logo" style="display: none;">
+                    <span class="brand-name">Gautam Insurance</span>
+                </a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#advisors" class="nav-link">Advisors</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin.html" class="nav-link admin-link">Admin</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our insurance experts</p>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Office Address</h3>
+                    <p>7509E Main St, Suite 208<br>Reynoldsburg, OH 43068</p>
+                    <a href="https://maps.google.com/?q=7509E+Main+St,+Suite+208,+Reynoldsburg,+OH+43068" target="_blank" class="btn btn-outline">View on Map</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone Numbers</h3>
+                    <p><strong>Main:</strong> +1 (800) 555-0199</p>
+                    <p><strong>Puran Gautam:</strong> 614-804-0209</p>
+                    <p><strong>Kumar Monger:</strong> 330-237-7980</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>gautaminsuranceagency@gmail.com</p>
+                    <p>We respond to all emails within 24 hours</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Business Hours</h3>
+                    <p><strong>Monday - Friday:</strong> 8:30 AM - 5:30 PM</p>
+                    <p><strong>Saturday:</strong> By Appointment</p>
+                    <p><strong>Sunday:</strong> Closed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Send Us a Message</h2>
+                <p>Have questions about our insurance services? We're here to help!</p>
+            </div>
+            
+            <div class="contact-form-container">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="home-insurance">Home Insurance</option>
+                                <option value="auto-insurance">Auto Insurance</option>
+                                <option value="life-insurance">Life Insurance</option>
+                                <option value="commercial-insurance">Commercial Insurance</option>
+                                <option value="claims">Claims Support</option>
+                                <option value="general">General Inquiry</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Please tell us how we can help you..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="newsletter" value="yes">
+                            Subscribe to our newsletter for insurance tips and updates
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Contact -->
+    <section class="emergency-contact">
+        <div class="container">
+            <div class="emergency-content">
+                <div class="emergency-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h2>Emergency Claims</h2>
+                <p>If you need to report a claim outside of business hours, please contact our 24/7 claims hotline:</p>
+                <div class="emergency-number">
+                    <i class="fas fa-phone"></i>
+                    <span>+1 (800) 555-CLAIM</span>
+                </div>
+                <p>Our claims team is available 24/7 to assist you with emergency situations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Locations -->
+    <section class="office-locations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Locations</h2>
+                <p>Visit us at one of our convenient Ohio locations</p>
+            </div>
+            
+            <div class="locations-grid">
+                <div class="location-card">
+                    <div class="location-image">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="location-info">
+                        <h3>Columbus Office</h3>
+                        <p class="location-address">
+                            <i class="fas fa-map-marker-alt"></i>
+                            7509E Main St, Suite 208<br>
+                            Reynoldsburg, OH 43068
+                        </p>
+                        <div class="location-details">
+                            <p><i class="fas fa-phone"></i> 614-804-0209</p>
+                            <p><i class="fas fa-user"></i> Puran Gautam</p>
+                            <p><i class="fas fa-clock"></i> Mon-Fri: 8:30am-5:30pm</p>
+                        </div>
+                        <button class="btn btn-outline" onclick="scheduleWithAdvisor('puran')">Schedule with Puran</button>
+                    </div>
+                </div>
+                
+                <div class="location-card">
+                    <div class="location-image">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="location-info">
+                        <h3>Akron Office</h3>
+                        <p class="location-address">
+                            <i class="fas fa-map-marker-alt"></i>
+                            By Appointment Only<br>
+                            Akron, OH
+                        </p>
+                        <div class="location-details">
+                            <p><i class="fas fa-phone"></i> 330-237-7980</p>
+                            <p><i class="fas fa-user"></i> Kumar Monger</p>
+                            <p><i class="fas fa-clock"></i> Mon-Fri: 8:30am-5:30pm</p>
+                        </div>
+                        <button class="btn btn-outline" onclick="scheduleWithAdvisor('kumar')">Schedule with Kumar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How do I get a quote?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can get a quote by using our online quote tool on the homepage, calling our office directly, or scheduling a consultation with one of our advisors. We'll need some basic information about your insurance needs to provide an accurate quote.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What information do I need to provide for a quote?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The information needed varies by insurance type. For auto insurance, we'll need details about your vehicle and driving history. For home insurance, we'll need information about your property. For life insurance, we'll need basic health and lifestyle information.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How quickly can I get coverage?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>In most cases, coverage can begin immediately once your application is approved and payment is processed. Some policies may have waiting periods, which we'll explain during the application process.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What should I do if I need to file a claim?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For emergency claims outside business hours, call our 24/7 claims hotline at +1 (800) 555-CLAIM. During business hours, you can call our main office and we'll guide you through the process.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Do you offer payment plans?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer flexible payment options including monthly, quarterly, and annual payments. We'll work with you to find a payment plan that fits your budget.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img class="brand-logo" alt="Company logo" style="display: none;">
+                        <span class="brand-name">Gautam Insurance</span>
+                    </div>
+                    <p>Protecting what matters most to you with comprehensive insurance solutions tailored to your needs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#advisors">Advisors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#home">Home Insurance</a></li>
+                        <li><a href="services.html#auto">Auto Insurance</a></li>
+                        <li><a href="services.html#life">Life Insurance</a></li>
+                        <li><a href="services.html#commercial">Commercial Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>7509E Main St, Suite 208<br>Reynoldsburg, OH 43068</p>
+                    <p>Phone: +1 (800) 555-0199</p>
+                    <p>Email: gautaminsuranceagency@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gautam Insurance Agency. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/brand.js"></script>
+    <script>
+        // Initialize navigation and form
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeNavigation();
+            initializeContactForm();
+        });
+
+        function initializeNavigation() {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+        }
+
+        function initializeContactForm() {
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', handleContactSubmit);
+        }
+
+        async function handleContactSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+            
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
+                    event.target.reset();
+                } else {
+                    showNotification('Failed to send message. Please try again.', 'error');
+                }
+            } catch (error) {
+                console.error('Error submitting contact form:', error);
+                showNotification('An error occurred. Please try again.', 'error');
+            }
+        }
+
+        function scheduleWithAdvisor(advisor) {
+            if (advisor === 'puran') {
+                window.location.href = 'index.html#contact';
+            } else if (advisor === 'kumar') {
+                window.location.href = 'index.html#contact';
+            }
+        }
+
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = element.querySelector('i');
+            
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                answer.style.display = 'block';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.textContent = message;
+            
+            Object.assign(notification.style, {
+                position: 'fixed',
+                top: '20px',
+                right: '20px',
+                padding: '1rem 2rem',
+                borderRadius: '8px',
+                color: 'white',
+                fontWeight: '600',
+                zIndex: '10000',
+                boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+                transform: 'translateX(100%)',
+                transition: 'transform 0.3s ease'
+            });
+            
+            const colors = {
+                success: '#10b981',
+                error: '#ef4444',
+                info: '#3b82f6',
+                warning: '#f59e0b'
+            };
+            notification.style.backgroundColor = colors[type] || colors.info;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 5000);
+        }
+
+        // FAQ styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .faq-item {
+                border-bottom: 1px solid #e5e7eb;
+                padding: 1rem 0;
+            }
+            .faq-question {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                padding: 1rem 0;
+            }
+            .faq-question h3 {
+                margin: 0;
+                color: #1f2937;
+            }
+            .faq-question i {
+                transition: transform 0.3s ease;
+                color: #6b7280;
+            }
+            .faq-answer {
+                display: none;
+                padding: 0 0 1rem 0;
+                color: #6b7280;
+                line-height: 1.6;
+            }
+            .notification {
+                animation: slideIn 0.3s ease;
+            }
+            @keyframes slideIn {
+                from { transform: translateX(100%); }
+                to { transform: translateX(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

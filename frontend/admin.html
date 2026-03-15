@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Gautam Insurance</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="/static/css/admin.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Login Modal -->
+    <div id="login-modal" class="login-modal">
+        <div class="login-content">
+            <div class="login-header">
+                <h2><i class="fas fa-shield-alt"></i> Admin Login</h2>
+                <p>Secure access to Gautam Insurance Admin Panel</p>
+            </div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                <div id="login-error" class="error-message" style="display: none;"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="admin-dashboard" class="admin-dashboard" style="display: none;">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fas fa-shield-alt"></i> Admin Panel</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active admin-only" data-section="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item admin-only" data-section="content">
+                    <i class="fas fa-edit"></i>
+                    <span>Website Content</span>
+                </a>
+                <a href="#" class="nav-item admin-only" data-section="advisors">
+                    <i class="fas fa-users"></i>
+                    <span>Advisors</span>
+                </a>
+                <a href="#" class="nav-item admin-only" data-section="quotes">
+                    <i class="fas fa-calculator"></i>
+                    <span>Quotes</span>
+                </a>
+                <a href="#" class="nav-item" data-section="consultations">
+                    <i class="fas fa-calendar"></i>
+                    <span>Consultations</span>
+                </a>
+                <a href="#" class="nav-item" data-section="clients">
+                    <i class="fas fa-folder-open"></i>
+                    <span>Clients</span>
+                </a>
+                <a href="#" class="nav-item admin-only" data-section="messages">
+                    <i class="fas fa-envelope"></i>
+                    <span>Messages</span>
+                </a>
+                <a href="#" class="nav-item admin-only" data-section="email">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <span>Email Settings</span>
+                </a>
+                <a href="#" class="nav-item admin-only" data-section="testimonials">
+                    <i class="fas fa-star"></i>
+                    <span>Testimonials</span>
+                </a>
+                <a href="#" class="nav-item admin-only" data-section="emergency">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>Emergency Contacts</span>
+                </a>
+                <a href="#" class="nav-item" data-section="account">
+                    <i class="fas fa-user-cog"></i>
+                    <span>Account</span>
+                </a>
+                <a href="#" class="nav-item" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <div class="header-content">
+                    <h1 id="page-title">Dashboard</h1>
+                    <div class="header-actions">
+                        <button class="btn btn-primary" id="add-new-btn" style="display: none;">
+                            <i class="fas fa-plus"></i> Add New
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard-section" class="content-section admin-only">
+                <div class="stats-grid">
+                    <div class="stat-card" data-section="advisors">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="total-advisors">0</h3>
+                            <p>Total Advisors</p>
+                        </div>
+                    </div>
+                    <div class="stat-card" data-section="quotes">
+                        <div class="stat-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="total-quotes">0</h3>
+                            <p>Total Quotes</p>
+                        </div>
+                    </div>
+                    <div class="stat-card" data-section="consultations">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="total-consultations">0</h3>
+                            <p>Consultations</p>
+                        </div>
+                    </div>
+                    <div class="stat-card" data-section="messages">
+                        <div class="stat-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="total-messages">0</h3>
+                            <p>Messages</p>
+                        </div>
+                    </div>
+                    <div class="stat-card" data-section="testimonials">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="total-testimonials">0</h3>
+                            <p>Testimonials</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list" id="activity-list">
+                        <!-- Recent activity will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content Management Section -->
+            <section id="content-section" class="content-section admin-only" style="display: none;">
+                <div class="content-tabs">
+                    <button class="tab-btn active" data-tab="home">Home Page</button>
+                    <button class="tab-btn" data-tab="brand">Brand</button>
+                    <button class="tab-btn" data-tab="partners">We Support Companies</button>
+                    <button class="tab-btn" data-tab="service-pages">Service Pages</button>
+                    <button class="tab-btn" data-tab="services">Services</button>
+                    <button class="tab-btn" data-tab="about">About</button>
+                </div>
+
+                <div class="content-preview-header">
+                    <h3>Live Preview</h3>
+                    <button type="button" class="btn btn-secondary" id="toggle-preview-btn">Hide Preview</button>
+                </div>
+                <div id="content-preview" class="content-preview">
+                    <div class="preview-section">
+                        <h4>Brand</h4>
+                        <div class="preview-brand">
+                            <div class="preview-brand-logo" id="preview-brand-logo"></div>
+                            <span id="preview-brand-name">Gautam Insurance</span>
+                        </div>
+                    </div>
+                    <div class="preview-section">
+                        <h4>Hero</h4>
+                        <h2 id="preview-hero-title">Hero Title</h2>
+                        <p id="preview-hero-subtitle">Hero subtitle goes here.</p>
+                        <span class="preview-cta" id="preview-hero-cta">Call to Action</span>
+                    </div>
+                    <div class="preview-section">
+                        <h4 id="preview-partners-title">We support the following company</h4>
+                        <p id="preview-partners-subtitle"></p>
+                        <div class="preview-partners" id="preview-partners-list">
+                            <!-- Partners preview -->
+                        </div>
+                    </div>
+                    <div class="preview-section">
+                        <h4 id="preview-service-pages-title">Service Pages</h4>
+                        <p id="preview-service-pages-subtitle"></p>
+                        <div class="preview-service-pages" id="preview-service-pages-list">
+                            <!-- Service pages preview -->
+                        </div>
+                    </div>
+                    <div class="preview-section">
+                        <h4 id="preview-services-title">Services</h4>
+                        <div class="preview-services" id="preview-services-list">
+                            <!-- Services preview -->
+                        </div>
+                    </div>
+                    <div class="preview-section">
+                        <h4 id="preview-about-title">Why Choose Us</h4>
+                        <p id="preview-about-description"></p>
+                        <ul class="preview-features" id="preview-features-list">
+                            <!-- Features preview -->
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="home-tab" class="tab-content">
+                    <div class="content-editor">
+                        <h3>Hero Section</h3>
+                        <form id="hero-content-form">
+                            <div class="form-group">
+                                <label>Title</label>
+                                <input type="text" id="hero-title" name="title">
+                            </div>
+                            <div class="form-group">
+                                <label>Subtitle</label>
+                                <textarea id="hero-subtitle" name="subtitle" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>CTA Button Text</label>
+                                <input type="text" id="hero-cta" name="cta_text">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="brand-tab" class="tab-content" style="display: none;">
+                    <div class="content-editor">
+                        <h3>Brand Settings</h3>
+                        <form id="brand-content-form">
+                            <div class="form-group">
+                                <label>Company Name</label>
+                                <input type="text" id="brand-name" name="company_name">
+                            </div>
+                            <div class="form-group">
+                                <label>Logo URL</label>
+                                <input type="text" id="brand-logo-url" name="logo_url" placeholder="/uploads/images/logo.png">
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-secondary" id="brand-logo-upload">Upload Logo</button>
+                                <input type="file" id="brand-logo-file" accept="image/*" style="display: none;">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="partners-tab" class="tab-content" style="display: none;">
+                    <div class="content-editor">
+                        <h3>We support the following company</h3>
+                        <p>Add, edit, or delete the companies shown on the home page.</p>
+                        <form id="partners-content-form">
+                            <div class="form-group">
+                                <label>Section Title</label>
+                                <input type="text" id="partners-title" name="title">
+                            </div>
+                            <div class="form-group">
+                                <label>Subtitle</label>
+                                <textarea id="partners-subtitle" name="subtitle" rows="3"></textarea>
+                            </div>
+                            <div id="partners-list">
+                                <!-- Partners will be loaded here -->
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="service-pages-tab" class="tab-content" style="display: none;">
+                    <div class="content-editor">
+                        <h3>Service Pages</h3>
+                        <form id="service-pages-content-form">
+                            <div class="form-group">
+                                <label>Page Title</label>
+                                <input type="text" id="service-pages-title" name="title">
+                            </div>
+                            <div class="form-group">
+                                <label>Subtitle</label>
+                                <textarea id="service-pages-subtitle" name="subtitle" rows="3"></textarea>
+                            </div>
+                            <div id="service-pages-list">
+                                <!-- Service pages will be loaded here -->
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="services-tab" class="tab-content" style="display: none;">
+                    <div class="content-editor">
+                        <h3>Services Section</h3>
+                        <form id="services-content-form">
+                            <div class="form-group">
+                                <label>Section Title</label>
+                                <input type="text" id="services-title" name="title">
+                            </div>
+                            <div id="services-list">
+                                <!-- Services will be loaded here -->
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="about-tab" class="tab-content" style="display: none;">
+                    <div class="content-editor">
+                        <h3>About Section</h3>
+                        <form id="about-content-form">
+                            <div class="form-group">
+                                <label>Why Choose Us Title</label>
+                                <input type="text" id="about-title" name="title">
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea id="about-description" name="description" rows="4"></textarea>
+                            </div>
+                            <div id="features-list">
+                                <!-- Features will be loaded here -->
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Advisors Management Section -->
+            <section id="advisors-section" class="content-section admin-only" style="display: none;">
+                <div class="advisors-list" id="advisors-list">
+                    <!-- Advisors will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Quotes Section -->
+            <section id="quotes-section" class="content-section admin-only" style="display: none;">
+                <div class="quotes-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Type</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Premium</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="quotes-table-body">
+                            <!-- Quotes will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Consultations Section -->
+            <section id="consultations-section" class="content-section" style="display: none;">
+                <div class="consultations-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Advisor</th>
+                                <th>Topic</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="consultations-table-body">
+                            <!-- Consultations will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Clients Section -->
+            <section id="clients-section" class="content-section" style="display: none;">
+                <div class="clients-list" id="clients-list">
+                    <!-- Clients will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Messages Section -->
+            <section id="messages-section" class="content-section admin-only" style="display: none;">
+                <div class="messages-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Subject</th>
+                                <th>Message</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="messages-table-body">
+                            <!-- Messages will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Email Settings Section -->
+            <section id="email-section" class="content-section admin-only" style="display: none;">
+                <div class="content-editor">
+                    <h3>Email Service</h3>
+                    <form id="email-settings-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email-provider">Provider</label>
+                                <select id="email-provider" name="provider" required>
+                                    <option value="gmail">Gmail</option>
+                                    <option value="outlook">Outlook (Office 365)</option>
+                                    <option value="custom">Custom SMTP</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="smtp-port">SMTP Port</label>
+                                <input type="number" id="smtp-port" name="smtp_port" min="1" max="65535" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="smtp-server">SMTP Server</label>
+                            <input type="text" id="smtp-server" name="smtp_server" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="smtp-username">SMTP Username</label>
+                                <input type="text" id="smtp-username" name="smtp_username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="smtp-password">SMTP Password / App Password</label>
+                                <input type="password" id="smtp-password" name="smtp_password" placeholder="Leave blank to keep current">
+                                <small id="smtp-password-hint">Leave blank to keep the current password.</small>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="from-name">From Name</label>
+                                <input type="text" id="from-name" name="from_name">
+                            </div>
+                            <div class="form-group">
+                                <label for="from-email">From Email</label>
+                                <input type="email" id="from-email" name="from_email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="forward-email">Forward To (Notifications Inbox)</label>
+                            <input type="email" id="forward-email" name="forward_to_email">
+                        </div>
+
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="smtp-use-tls" name="use_tls" checked>
+                                Use TLS
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Save Email Settings</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section id="testimonials-section" class="content-section admin-only" style="display: none;">
+                <div class="testimonials-list" id="testimonials-list">
+                    <!-- Testimonials will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Emergency Contacts Section -->
+            <section id="emergency-section" class="content-section admin-only" style="display: none;">
+                <div class="emergency-contacts-list" id="emergency-contacts-list">
+                    <!-- Emergency contacts will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Account Section -->
+            <section id="account-section" class="content-section" style="display: none;">
+                <div class="content-editor">
+                    <h3>Change Password</h3>
+                    <form id="change-password-form">
+                        <div class="form-group">
+                            <label for="current-password">Current Password</label>
+                            <input type="password" id="current-password" name="current_password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="new-password">New Password</label>
+                            <input type="password" id="new-password" name="new_password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm New Password</label>
+                            <input type="password" id="confirm-password" name="confirm_password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Password</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add/Edit Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h2 id="modal-title">Add New</h2>
+            <form id="edit-form">
+                <!-- Dynamic form fields will be injected here -->
+            </form>
+        </div>
+    </div>
+
+    <!-- Consultation Details Modal -->
+    <div id="consultation-modal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close" onclick="closeConsultationModal()">&times;</span>
+            <h2>Consultation Details</h2>
+            <div id="consultation-modal-details" class="modal-details">
+                <!-- Consultation details will be injected here -->
+            </div>
+            <form id="consultation-modal-form">
+                <div class="form-group">
+                    <label for="consultation-status">Update Status</label>
+                    <select id="consultation-status" name="status" required>
+                        <option value="pending">Pending</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="completed">Completed</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <button type="submit" class="btn btn-primary">Save Status</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeConsultationModal()">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Message Details Modal -->
+    <div id="message-modal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close" onclick="closeMessageModal()">&times;</span>
+            <h2>Contact Message</h2>
+            <div id="message-modal-details" class="modal-details">
+                <!-- Message details will be injected here -->
+            </div>
+            <form id="message-modal-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="message-name">Name</label>
+                        <input type="text" id="message-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-email">Email</label>
+                        <input type="email" id="message-email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="message-phone">Phone</label>
+                        <input type="text" id="message-phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-status">Status</label>
+                        <select id="message-status" name="status" required>
+                            <option value="unread">Unread</option>
+                            <option value="read">Read</option>
+                            <option value="replied">Replied</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message-subject">Subject</label>
+                    <input type="text" id="message-subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message-body">Message</label>
+                    <textarea id="message-body" name="message" rows="4" required></textarea>
+                </div>
+                <div class="form-row">
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeMessageModal()">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/static/js/admin.js"></script>
+</body>
+</html>

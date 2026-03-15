@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details - Gautam Insurance</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="brand-link">
+                    <img class="brand-logo" alt="Company logo" style="display: none;">
+                    <span class="brand-name">Gautam Insurance</span>
+                </a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link active">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#advisors" class="nav-link">Advisors</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin.html" class="nav-link admin-link">Admin</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-actions">
+                <a class="btn btn-outline btn-small" href="services.html">Back to Services</a>
+            </div>
+            <h1 id="service-page-title">Service Details</h1>
+            <p id="service-page-subtitle">Explore coverage details and tailored support.</p>
+        </div>
+    </section>
+
+    <!-- Service Detail -->
+    <section class="services-details">
+        <div class="container">
+            <div id="service-detail" class="service-detail-card service-detail-single">
+                <div class="service-media" id="service-media"></div>
+                <div class="service-content">
+                    <h2 id="service-title">Service</h2>
+                    <div class="service-description" id="service-description"></div>
+                    <div class="service-features" id="service-highlights"></div>
+                    <div class="service-cta">
+                        <a id="service-cta" class="btn btn-primary" href="index.html#quote">Get a Quote</a>
+                    </div>
+                </div>
+            </div>
+            <div id="service-not-found" class="service-empty" style="display: none;">
+                <h2>Service not found</h2>
+                <p>We could not find that service. Please return to the services list and try again.</p>
+                <a class="btn btn-primary" href="services.html">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img class="brand-logo" alt="Company logo" style="display: none;">
+                        <span class="brand-name">Gautam Insurance</span>
+                    </div>
+                    <p>Protecting what matters most to you with comprehensive insurance solutions tailored to your needs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#advisors">Advisors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>7509E Main St, Suite 208<br>Reynoldsburg, OH 43068</p>
+                    <p>Phone: +1 (800) 555-0199</p>
+                    <p>Email: gautaminsuranceagency@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gautam Insurance Agency. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/brand.js"></script>
+    <script src="/static/js/service.js"></script>
+</body>
+</html>

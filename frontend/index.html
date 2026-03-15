@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gautam Insurance Agency - Tailored Insurance Support</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home" class="brand-link">
+                    <img class="brand-logo" alt="Company logo" style="display: none;">
+                    <span class="brand-name">Gautam Insurance</span>
+                </a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#advisors" class="nav-link">Advisors</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin.html" class="nav-link admin-link">Admin</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Insurance Solutions Tailored for You</h1>
+                <p class="hero-subtitle">Protect what matters most with comprehensive coverage designed for your unique needs. For over 25 years, we've been simplifying insurance with experienced advisors and cutting-edge technology.</p>
+                <div class="hero-buttons">
+                    <a href="#quote" class="btn btn-primary">Get a Quote</a>
+                    <a href="#services" class="btn btn-outline">Our Services</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Protected & Secure</h3>
+                    <p>Your peace of mind is our priority</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg"></div>
+    </section>
+
+    <!-- Partners Marquee -->
+    <section class="partner-marquee" aria-label="Related partner companies">
+        <div class="container">
+            <div class="partner-header">
+                <h2 id="partners-title">We support the following company</h2>
+                <p id="partners-subtitle">We work with trusted partners to provide more coverage choices for you.</p>
+            </div>
+        </div>
+        <div class="partner-marquee-track">
+            <div class="partner-track" id="partners-track">
+                <!-- Partner items will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Insurance Solutions</h2>
+                <p>Comprehensive coverage options designed to protect what matters most to you</p>
+            </div>
+            <div class="services-grid" id="services-grid">
+                <!-- Services will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="why-choose-content">
+                <div class="why-choose-text">
+                    <h2>Why Choose Gautam Insurance</h2>
+                    <p>For more than 25 years, our mission has been to simplify insurance. We pair experienced advisors with cutting-edge technology to provide clear, actionable guidance and dependable support when you need it most.</p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>Licensed agents in Ohio states</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-award"></i>
+                            <span>Rated A+ for financial strength</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-headset"></i>
+                            <span>24/7 claims concierge team</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-choose-stats">
+                    <div class="stat-item">
+                        <h3>25+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>10K+</h3>
+                        <p>Happy Clients</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>99%</h3>
+                        <p>Satisfaction Rate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Calculator -->
+    <section id="quote" class="quote-calculator">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get Your Insurance Quote</h2>
+                <p>Get an instant estimate for your insurance needs</p>
+            </div>
+            <div class="quote-form-container">
+                <form id="quote-form" class="quote-form">
+                    <div class="form-group">
+                        <label for="insurance-type">Insurance Type *</label>
+                        <select id="insurance-type" name="insurance_type" required>
+                            <option value="">Select Insurance Type</option>
+                            <option value="home">Home Insurance</option>
+                            <option value="auto">Auto Insurance</option>
+                            <option value="life">Life Insurance</option>
+                            <option value="commercial">Commercial Insurance</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name" name="full_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-reason">Reason for Quote *</label>
+                        <select id="quote-reason" name="reason" required>
+                            <option value="">Select Reason</option>
+                            <option value="New Purchase">New Purchase</option>
+                            <option value="Renewal">Renewal</option>
+                            <option value="Better Rates">Better Rates</option>
+                            <option value="Coverage Review">Coverage Review</option>
+                            <option value="Life Changes">Life Changes</option>
+                            <option value="Business Needs">Business Needs</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div id="dynamic-fields">
+                        <!-- Dynamic fields will be added based on insurance type -->
+                    </div>
+                    <button type="submit" class="btn btn-primary">Get Quote</button>
+                </form>
+                <div id="quote-result" class="quote-result" style="display: none;">
+                    <h3>Your Estimated Premium</h3>
+                    <div class="premium-amount">$<span id="premium-amount">0</span>/year</div>
+                    <p>This is an estimate. Contact us for a detailed quote.</p>
+                    <button onclick="showConsultationForm()" class="btn btn-secondary">Schedule Consultation</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advisors Section -->
+    <section id="advisors" class="advisors">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Your Advisory Team</h2>
+                <p>Schedule a call with a licensed specialist who understands your coverage goals</p>
+            </div>
+            <div class="advisors-grid" id="advisors-grid">
+                <!-- Advisors will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Real outcomes from families and businesses who rely on Gautam Insurance</p>
+            </div>
+            <div class="testimonials-grid" id="testimonials-grid">
+                <!-- Testimonials will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>7509E Main St, Suite 208<br>Reynoldsburg, OH 43068</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (800) 555-0199</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>gautaminsuranceagency@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Mon-Fri: 8:30am-5:30pm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form id="contact-form" class="contact-form">
+                        <h3>Send us a Message</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img class="brand-logo" alt="Company logo" style="display: none;">
+                        <span class="brand-name">Gautam Insurance</span>
+                    </div>
+                    <p>Protecting what matters most to you with comprehensive insurance solutions tailored to your needs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#advisors">Advisors</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Home Insurance</a></li>
+                        <li><a href="#">Auto Insurance</a></li>
+                        <li><a href="#">Life Insurance</a></li>
+                        <li><a href="#">Commercial Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>7509E Main St, Suite 208<br>Reynoldsburg, OH 43068</p>
+                    <p>Phone: +1 (800) 555-0199</p>
+                    <p>Email: gautaminsuranceagency@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gautam Insurance Agency. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Consultation Modal -->
+    <div id="consultation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeConsultationModal()">&times;</span>
+            <h2>Schedule Consultation</h2>
+            <form id="consultation-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="consult-name">Full Name</label>
+                        <input type="text" id="consult-name" name="full_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="consult-email">Email</label>
+                        <input type="email" id="consult-email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="consult-phone">Phone</label>
+                    <input type="tel" id="consult-phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="consult-advisor">Preferred Advisor *</label>
+                    <select id="consult-advisor" name="advisor_id" required>
+                        <option value="">Select an Advisor</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="preferred-date">Preferred Date *</label>
+                        <input type="date" id="preferred-date" name="preferred_date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferred-time">Preferred Time *</label>
+                        <select id="preferred-time" name="preferred_time" required>
+                            <option value="">Select Time</option>
+                            <option value="09:00">9:00 AM</option>
+                            <option value="09:30">9:30 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="10:30">10:30 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="11:30">11:30 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="12:30">12:30 PM</option>
+                            <option value="13:00">1:00 PM</option>
+                            <option value="13:30">1:30 PM</option>
+                            <option value="14:00">2:00 PM</option>
+                            <option value="14:30">2:30 PM</option>
+                            <option value="15:00">3:00 PM</option>
+                            <option value="15:30">3:30 PM</option>
+                            <option value="16:00">4:00 PM</option>
+                            <option value="16:30">4:30 PM</option>
+                            <option value="17:00">5:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="consult-topic">What would you like to discuss? *</label>
+                    <input type="text" id="consult-topic" name="discussion_topic" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Schedule Consultation</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/static/js/brand.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
