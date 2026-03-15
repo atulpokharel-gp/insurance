@@ -9,9 +9,9 @@ import os
 from jinja2 import Template
 import logging
 
-from database import SessionLocal
-from models import EmailSettings
-from security import decrypt_value
+from backend.database import SessionLocal
+from backend.models import EmailSettings
+from backend.security import decrypt_value
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

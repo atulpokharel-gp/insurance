@@ -42,4 +42,4 @@ echo "Admin panel: http://localhost:8000/admin.html"
 echo "Default admin credentials: username: admin, password: admin123"
 echo "Press Ctrl+C to stop the server"
 
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+uvicorn main:app --host 0.0.0.0 --port 8004 --reload

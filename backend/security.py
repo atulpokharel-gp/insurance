@@ -4,7 +4,7 @@ from typing import Optional
 
 from cryptography.fernet import Fernet, InvalidToken
 
-from config import get_settings
+from backend.config import get_settings
 
 
 def _derive_key(source: str) -> bytes:

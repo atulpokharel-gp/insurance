@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, JSONResponse
 from sqlalchemy.orm import Session
-from database import (
+from backend.database import (
     SessionLocal,
     engine,
     backup_engine,
@@ -12,13 +12,13 @@ from database import (
     sync_backup_database,
     ensure_client_profile_columns,
 )
-from models_enhanced import (
+from backend.models_enhanced import (
     User, Advisor, ConsultationRequest, InsuranceQuote, ContactMessage, 
     Testimonial, WebsiteContent, TimeSlot, EmergencyContact, EmailTemplate,
     EmailLog, QuoteReason, NotificationPreference, EmailSettings, AuditLog,
     AdvisorAccount, ClientProfile, ClientDocument, PasswordResetToken
 )
-from schemas import (
+from backend.schemas import (
     User as UserSchema, UserCreate, Token, UserInfo,
     Advisor as AdvisorSchema, AdvisorCreate, AdvisorUpdate,
     ConsultationRequest as ConsultationRequestSchema, ConsultationRequestCreate,
@@ -29,13 +29,13 @@ from schemas import (
     EmailSettingsUpdate, EmailSettingsResponse,
     ClientProfileCreate, ClientProfileResponse, ClientDocumentResponse
 )
-from auth import (
+from backend.auth import (
     authenticate_user, create_access_token, get_current_active_user, 
     get_admin_user, get_password_hash, verify_password
 )
-from config import get_settings
-from email_service import email_service
-from security import encrypt_value
+from backend.config import get_settings
+from backend.email_service import email_service
+from backend.security import encrypt_value
 from datetime import timedelta, datetime
 import secrets
 import hashlib

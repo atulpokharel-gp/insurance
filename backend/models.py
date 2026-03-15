@@ -1,5 +1,5 @@
-from database import Base
-from models_enhanced import (
+from backend.database import Base
+from backend.models_enhanced import (
     Advisor,
     ConsultationRequest,
     ContactMessage,

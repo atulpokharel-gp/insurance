@@ -1,10 +1,11 @@
 from pydantic_settings import BaseSettings
 from functools import lru_cache
+from typing import Optional
 import os
 
 class Settings(BaseSettings):
     secret_key: str = "your-secret-key-here-change-in-production"
-    encryption_key: str | None = None
+    encryption_key: Optional[str] = None
     algorithm: str = "HS256"
     access_token_expire_minutes: int = 30
     database_url: str = "sqlite:///./gautam_insurance.db"
